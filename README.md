@@ -1,2 +1,22 @@
 # UBlockClock
-Minecraft Paper plugin for placing block-based clocks with /uclock commands
+
+Плагин для Paper 1.21.11.
+
+Команды:
+- /uclock select
+- /uclock set <id> selection
+- /uclock remove <id>
+
+Использование:
+1. Введите `/uclock select`.
+2. Нажмите ПКМ по двум противоположным блокам.
+3. Введите `/uclock set <id> selection`.
+4. Часы будут автоматически обновляться по Москве (`Europe/Moscow`).
+
+Сборка:
+1. Установите Java 21.
+2. Запустите: `./gradlew build`
+3. Готовый jar будет в `build/libs/`
+
+Примечание:
+Цифры отображаются белыми блоками в выделенной области. При изменении времени регион очищается и рисуется заново.

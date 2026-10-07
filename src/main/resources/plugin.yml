@@ -1,0 +1,12 @@
+name: UBlockClock
+version: 1.0.0
+main: com.uname1337.uclock.UClockPlugin
+api-version: '1.21'
+commands:
+  uclock:
+    description: Управление часовыми блоками.
+    usage: /uclock <select|set|remove>
+    permission: uclock.use
+permissions:
+  uclock.use:
+    default: true
