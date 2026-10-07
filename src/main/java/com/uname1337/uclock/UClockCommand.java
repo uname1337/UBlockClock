@@ -31,6 +31,15 @@ public class UClockCommand implements CommandExecutor {
                 player.sendMessage("§aРежим выбора включён. Нажмите ПКМ по первой точке, затем по второй.");
                 return true;
             }
+            case "stopselect" -> {
+                if (!plugin.isSelecting(player.getUniqueId())) {
+                    player.sendMessage("§cРежим выбора уже выключен.");
+                    return true;
+                }
+                plugin.removeSelection(player.getUniqueId());
+                player.sendMessage("§aРежим выбора выключен.");
+                return true;
+            }
             case "set" -> {
                 if (args.length < 3) {
                     player.sendMessage("§cИспользование: /uclock set <id> selection");
@@ -67,6 +76,7 @@ public class UClockCommand implements CommandExecutor {
     private void sendHelp(Player player) {
         player.sendMessage("§6UBlockClock");
         player.sendMessage("§7/uclock select §8- включить режим выделения");
+        player.sendMessage("§7/uclock stopselect §8- выключить режим выделения");
         player.sendMessage("§7/uclock set <id> selection §8- сохранить часы на выделенной области");
         player.sendMessage("§7/uclock remove <id> §8- удалить часы");
     }
